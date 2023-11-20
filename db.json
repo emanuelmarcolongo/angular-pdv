@@ -26,5 +26,18 @@
       "id": 4
     }
   ],
-  "products": []
+  "products": [
+    {
+      "name": "123123",
+      "value": 123123,
+      "imgUrl": "https://www.autoo.com.br/fotos/2023/6/1280_960/fiat_mobi_2023_1_07062023_74796_1280_960.jpg",
+      "id": 1
+    },
+    {
+      "name": "123123",
+      "value": 123123,
+      "imgUrl": "https://alskalskkas.com",
+      "id": 2
+    }
+  ]
 }

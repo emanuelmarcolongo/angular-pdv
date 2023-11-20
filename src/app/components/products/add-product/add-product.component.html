@@ -1,1 +1,98 @@
-<p>add-product works!</p>
+<div
+  class="h-screen flex items-center justify-center bg-gradient-to-r from-cyan-400 via-purple-400 to-green-500"
+>
+  <div class="space-y-4">
+    <div
+      class="absolute -top-2 -left-2 -right-2 -bottom-2 rounded-lg bg-gradient-to-r from-[#3b5998] via-purple-400 to-purple-950 shadow-lg animate-pulse"
+    ></div>
+    <div
+      id="form-container"
+      class="bg-white p-16 rounded-lg shadow-2xl w-80 relative z-10 transform transition duration-500 ease-in-out"
+    >
+      <h2
+        id="form-title"
+        class="text-center text-3xl font-bold mb-10 text-gray-800"
+      >
+        Cadastrar produto
+      </h2>
+      <form class="space-y-5" [formGroup]="addProductForm">
+        <input
+          class="w-full h-12 border border-gray-800 px-3 rounded-lg"
+          placeholder="Nome do Produto"
+          formControlName="name"
+          name="name"
+          type="text"
+        />
+        <div
+          *ngIf="
+            addProductForm.get('name')?.touched &&
+            addProductForm.get('name')?.hasError('required')
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Nome é obrigatório.
+        </div>
+
+        <input
+          class="w-full h-12 border border-gray-800 px-3 rounded-lg"
+          placeholder="Preço"
+          formControlName="value"
+          name="value"
+          type="number"
+        />
+        <div
+          *ngIf="
+            addProductForm.get('value')?.touched &&
+            addProductForm.get('value')?.hasError('required')
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Valor é obrigatório.
+        </div>
+
+        <input
+          class="w-full h-12 border border-gray-800 px-3 rounded-lg"
+          placeholder="Url Imagem"
+          formControlName="imgUrl"
+          name="Imagem"
+          type="text"
+        />
+        <div
+          *ngIf="
+            addProductForm.get('imgUrl')?.touched &&
+            addProductForm.get('imgUrl')?.hasError('required')
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Url da imagem é obrigatório.
+        </div>
+        <div
+          *ngIf="
+            addProductForm.get('imgUrl')?.touched &&
+            addProductForm.get('imgUrl')?.hasError('pattern')
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Deve ser uma url válida!
+        </div>
+
+        <button
+          [disabled]="addProductForm.invalid"
+          (click)="addProduct()"
+          class="w-full h-12 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Cadastrar Produto
+        </button>
+      </form>
+
+      <p class="text-center mt-4">
+        <a
+          class="text-primary hover:underline text-blue-500"
+          href="products/list"
+        >
+          Ir para lista</a
+        >
+      </p>
+    </div>
+  </div>
+</div>
