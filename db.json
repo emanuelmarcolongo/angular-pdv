@@ -18,6 +18,12 @@
       "password": "123",
       "type": "ADM",
       "id": 3
+    },
+    {
+      "email": "teste@gmail.com",
+      "password": "123",
+      "type": "ADM",
+      "id": 4
     }
   ]
 }
