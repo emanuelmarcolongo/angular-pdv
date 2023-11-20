@@ -13,16 +13,28 @@
         id="form-title"
         class="text-center text-3xl font-bold mb-10 text-gray-800"
       >
-        Login
+        Cadastro
       </h2>
-      <form class="space-y-5" [formGroup]="loginForm">
+      <form class="space-y-5" [formGroup]="registerForm">
         <input
           class="w-full h-12 border border-gray-800 px-3 rounded-lg"
           placeholder="Email"
-          formControlName="email"
-          name="email"
+          id=""
+          name=""
           type="text"
+          formControlName="email"
         />
+
+        <select
+          class="w-full h-12 border border-gray-800 px-3 rounded-lg"
+          formControlName="type"
+          matNativeControl
+          required
+        >
+          <option value="" disabled selected>Selecione um tipo</option>
+          <option value="ADM">Admin</option>
+          <option value="Employee">Funcionario</option>
+        </select>
 
         <input
           class="w-full h-12 border border-gray-800 px-3 rounded-lg"
@@ -32,22 +44,28 @@
           name="password"
         />
 
+        <input
+          class="w-full h-12 border border-gray-800 px-3 rounded-lg"
+          placeholder="Confirm Password"
+          type="password"
+          formControlName="confirmPassword"
+          name="confirmPassword"
+        />
         <button
-          [disabled]="loginForm.invalid"
-          (click)="login()"
+          (click)="register()"
           class="w-full h-12 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Login
+          Criar Conta
         </button>
       </form>
 
       <p class="text-center">
-        Não tem uma conta?
+        Já possui uma conta?
         <a
           class="text-primary font-bold hover:underline text-blue-500"
-          href="/register"
+          href="auth/login"
         >
-          Registre-se</a
+          Faça login</a
         >
       </p>
     </div>
