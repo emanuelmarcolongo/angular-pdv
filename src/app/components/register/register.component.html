@@ -22,7 +22,19 @@
           id=""
           name=""
           type="text"
+          formControlName="email"
         />
+
+        <select
+          class="w-full h-12 border border-gray-800 px-3 rounded-lg"
+          formControlName="type"
+          matNativeControl
+          required
+        >
+          <option value="" disabled selected>Selecione um tipo</option>
+          <option value="ADM">Admin</option>
+          <option value="Employee">Funcionario</option>
+        </select>
 
         <input
           class="w-full h-12 border border-gray-800 px-3 rounded-lg"
@@ -40,7 +52,6 @@
           name="confirmPassword"
         />
         <button
-          [disabled]="registerForm.invalid"
           (click)="register()"
           class="w-full h-12 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >

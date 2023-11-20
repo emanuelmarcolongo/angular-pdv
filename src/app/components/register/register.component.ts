@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsersService } from 'src/app/services/users/users.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent {
   registerForm!: FormGroup;
 
-  constructor() {
+  constructor(public userService: UsersService) {
     this.buildRegisterForm();
   }
 
@@ -18,10 +19,22 @@ export class RegisterComponent {
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required]),
       confirmPassword: new FormControl(null, [Validators.required]),
+      type: new FormControl(null, [Validators.required]),
     });
   }
 
   register() {
-    console.log(this.registerForm.value);
+    const { confirmPassword, ...userInfo } = this.registerForm.value;
+    console.log(userInfo);
+    if (
+      this.registerForm.value.password !==
+      this.registerForm.value.confirmPassword
+    ) {
+      return alert('Senhas devem coincidir!!');
+    }
+
+    this.userService.insertUser(userInfo).subscribe((user: any) => {
+      console.log('Usuário: ', user.name, `inserido com sucesso!`);
+    });
   }
 }

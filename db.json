@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "email": "1231231@12.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 1
+    },
+    {
+      "email": "123123@123123.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "type": "ADM",
+      "id": 2
+    },
+    {
+      "email": "teste@email.com",
+      "password": "123",
+      "type": "ADM",
+      "id": 3
+    }
+  ]
+}
