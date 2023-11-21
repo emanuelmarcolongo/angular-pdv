@@ -4,6 +4,8 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ListProductsComponent } from './components/products/list-products/list-products.component';
 import { AddProductComponent } from './components/products/add-product/add-product.component';
+import { authUserGuard } from './auth-user.guard';
+import { authAdminGuard } from './auth-admin.guard';
 
 const routes: Routes = [
   {
@@ -25,10 +27,12 @@ const routes: Routes = [
       {
         path: 'list',
         component: ListProductsComponent,
+        canActivate: [authUserGuard],
       },
       {
         path: 'add',
         component: AddProductComponent,
+        canActivate: [authUserGuard, authAdminGuard],
       },
     ],
   },
