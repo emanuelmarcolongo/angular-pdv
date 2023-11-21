@@ -23,9 +23,9 @@
           {{ product.name }}
         </p>
         <p>
-          {{ product.value * 100 | currency : "BRL" }}
+          {{ product.value | currency : "BRL" }}
         </p>
-        <button>
+        <button (click)="openDialogEditProduct(product)">
           <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
         </button>
       </div>

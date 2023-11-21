@@ -11,6 +11,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HttpClientModule } from '@angular/common/http';
 import { AddProductComponent } from './components/products/add-product/add-product.component';
 import { ListProductsComponent } from './components/products/list-products/list-products.component';
+import { EditProductComponent } from './components/products/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ListProductsComponent } from './components/products/list-products/list-
     RegisterComponent,
     AddProductComponent,
     ListProductsComponent,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,
