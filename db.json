@@ -36,6 +36,12 @@
       "password": "123",
       "type": "ADM",
       "id": 6
+    },
+    {
+      "email": "funcionario@email.com",
+      "password": "123",
+      "type": "Employee",
+      "id": 7
     }
   ],
   "products": [
@@ -50,6 +56,12 @@
       "value": 123123,
       "imgUrl": "https://alskalskkas.com",
       "id": 2
+    },
+    {
+      "name": "Bike Downhill",
+      "value": 1200,
+      "imgUrl": "https://grupojpp.com.br/wp-content/uploads/2022/09/18213-1-scaled.jpg",
+      "id": 3
     }
   ]
 }
