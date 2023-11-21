@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users/users.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UsersService } from 'src/app/services/users/users.service';
 export class RegisterComponent {
   registerForm!: FormGroup;
 
-  constructor(public userService: UsersService) {
+  constructor(public userService: UsersService, private router: Router) {
     this.buildRegisterForm();
   }
 
@@ -35,6 +36,7 @@ export class RegisterComponent {
 
     this.userService.insertUser(userInfo).subscribe((user: any) => {
       console.log('Usuário: ', user.name, `inserido com sucesso!`);
+      this.router.navigate(['/auth/login']);
     });
   }
 }

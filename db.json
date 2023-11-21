@@ -24,6 +24,18 @@
       "password": "123",
       "type": "ADM",
       "id": 4
+    },
+    {
+      "email": "manu@teste.com",
+      "password": "123",
+      "type": "ADM",
+      "id": 5
+    },
+    {
+      "email": "asdfas@asdfasdf.com",
+      "password": "123",
+      "type": "ADM",
+      "id": 6
     }
   ],
   "products": [

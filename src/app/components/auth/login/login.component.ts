@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users/users.service';
 import { UserEntity } from '../../types/user-types';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
   users!: UserEntity[];
   user!: { email: string; password: string } | UserEntity;
 
-  constructor(public userService: UsersService) {
+  constructor(public userService: UsersService, private router: Router) {
     this.buildLoginForm();
     this.userService.getUsers().subscribe((users: UserEntity[]) => {
       this.users = users;
@@ -42,6 +43,7 @@ export class LoginComponent {
       console.log('Usuário autenticado!', authenticatedUser);
       this.user = authenticatedUser;
       localStorage.setItem('User', JSON.stringify(this.user));
+      this.router.navigate(['/products/list']);
     } else {
       alert('Email ou senha incorreta');
     }
