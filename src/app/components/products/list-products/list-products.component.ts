@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { EditProductComponent } from '../edit-product/edit-product.component';
+import { ProductEntity } from '../../types/product-types';
+import { UserEntity } from '../../types/user-types';
 
 @Component({
   selector: 'app-list-products',
@@ -9,8 +11,8 @@ import { EditProductComponent } from '../edit-product/edit-product.component';
   styleUrls: ['./list-products.component.scss'],
 })
 export class ListProductsComponent {
-  products!: any;
-  user!: any;
+  products!: ProductEntity[];
+  user!: UserEntity;
   isAdmin!: boolean;
 
   constructor(
@@ -35,9 +37,11 @@ export class ListProductsComponent {
     });
 
     dialogRef.afterClosed().subscribe((devolutivaModal: any) => {
-      this.productService.getProducts().subscribe((products: any) => {
-        this.products = products;
-      });
+      this.productService
+        .getProducts()
+        .subscribe((products: ProductEntity[]) => {
+          this.products = products;
+        });
     });
   }
 }

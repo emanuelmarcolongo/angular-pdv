@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ProductEntity } from '../../types/product-types';
 
 @Component({
   selector: 'app-edit-product',
@@ -10,7 +11,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class EditProductComponent {
   editProductForm!: FormGroup;
-  product!: any;
+  product!: ProductEntity;
 
   constructor(
     public productService: ProductsService,
@@ -46,7 +47,7 @@ export class EditProductComponent {
 
     this.productService
       .editProduct(this.product.id, editedProduct)
-      .subscribe((product: any) => {
+      .subscribe((product: ProductEntity) => {
         console.log('Produto editado com Sucesso!');
       });
 
