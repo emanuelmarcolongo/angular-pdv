@@ -46,22 +46,10 @@
   ],
   "products": [
     {
-      "name": "Carro Vermelho",
-      "value": 100000,
-      "imgUrl": "https://www.autoo.com.br/fotos/2023/6/1280_960/fiat_mobi_2023_1_07062023_74796_1280_960.jpg",
-      "id": 1
-    },
-    {
       "name": "Boneco Luffy",
       "value": 100,
       "imgUrl": "https://http2.mlstatic.com/D_NQ_NP_902772-MLB70385732519_072023-O.webp",
       "id": 2
-    },
-    {
-      "name": "Bike Downhill",
-      "value": 1200,
-      "imgUrl": "https://grupojpp.com.br/wp-content/uploads/2022/09/18213-1-scaled.jpg",
-      "id": 3
     }
   ]
 }

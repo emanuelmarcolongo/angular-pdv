@@ -28,6 +28,12 @@
         <button (click)="openDialogEditProduct(product)">
           <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
         </button>
+        <button
+          *ngIf="user?.type === 'ADM'"
+          (click)="deleteProduct(product.id)"
+        >
+          <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+        </button>
       </div>
     </div>
   </div>

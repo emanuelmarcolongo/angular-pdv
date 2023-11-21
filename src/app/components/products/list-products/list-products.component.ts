@@ -12,7 +12,7 @@ import { UserEntity } from '../../types/user-types';
 })
 export class ListProductsComponent {
   products!: ProductEntity[];
-  user!: UserEntity;
+  user!: UserEntity | undefined;
   isAdmin!: boolean;
 
   constructor(
@@ -43,5 +43,16 @@ export class ListProductsComponent {
           this.products = products;
         });
     });
+  }
+
+  deleteProduct(id: number) {
+    if (window.confirm('Tem certeza que deseja excluir o produto?')) {
+      this.productService.deleteProduct(id).subscribe((user: any) => {
+        console.log('Produto deletado com sucesso!');
+        this.productService.getProducts().subscribe((products: any[]) => {
+          this.products = products;
+        });
+      });
+    }
   }
 }
