@@ -13,7 +13,6 @@ import { UserEntity } from '../../types/user-types';
 export class ListProductsComponent {
   products!: ProductEntity[];
   user!: UserEntity | undefined;
-  isAdmin!: boolean;
 
   constructor(
     public productService: ProductsService,

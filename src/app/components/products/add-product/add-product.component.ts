@@ -29,9 +29,9 @@ export class AddProductComponent {
   }
   addProduct() {
     const newProduct = this.addProductForm.value;
-
     this.productService.insertProduct(newProduct).subscribe((product: any) => {
-      console.log('Produto Cadastrado com Sucesso!');
+      this.addProductForm.reset();
+      alert('Produto Cadastrado com Sucesso!');
     });
   }
 }

@@ -32,7 +32,7 @@ const routes: Routes = [
       {
         path: 'add',
         component: AddProductComponent,
-        canActivate: [authUserGuard, authAdminGuard],
+        canActivate: [authAdminGuard],
       },
     ],
   },

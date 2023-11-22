@@ -42,13 +42,19 @@
       "password": "123",
       "type": "Employee",
       "id": 7
+    },
+    {
+      "email": "admin@email.com",
+      "password": "123",
+      "type": "ADM",
+      "id": 8
     }
   ],
   "products": [
     {
-      "name": "Boneco Luffy",
-      "value": 100,
-      "imgUrl": "https://http2.mlstatic.com/D_NQ_NP_902772-MLB70385732519_072023-O.webp",
+      "name": "Carro Azul123123",
+      "value": 12000,
+      "imgUrl": "https://revistacarro.com.br/wp-content/uploads/2021/11/VW-Nivus-2022_6.jpg",
       "id": 2
     }
   ]
